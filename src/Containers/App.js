@@ -1,24 +1,36 @@
 import React, { Component } from 'react';
 import logo from '../Assets/logo.jpg';
 import './App.css';
-import Header from '../Components/Header/Header';
-import Banner from '../Components/Banner/Banner';
-import BannerSlider from '../Components/BannerSlider/BannerSlider';
+import Header from '../Components/Header';
+import BannerSlider from '../Components/BannerSlider';
+import styled from 'styled-components';
+import LatestRecipe from '../Components/LatestRecipe';
 
+
+const AppWrapper = styled.div`
+  min-width:auto;
+  max-width:100%;
+`
+const LogoWrapper = styled.div`
+  width: auto;
+  img{
+    padding-top:20px
+  }
+`
 class App extends Component {
      
     render(){
       return (
-        <div className="App">
-          <header className="App-header-container">
-            <div className="App-logo">
+        <AppWrapper>
+          <header className="wrapper">
+            <LogoWrapper>
               <img src={logo} alt="logo" />
-            </div>
+            </LogoWrapper>
             <Header/>
           </header>
-          <Banner/>
           <BannerSlider/>
-      </div>
+          <LatestRecipe/>
+      </AppWrapper>
       );
     }
 }
