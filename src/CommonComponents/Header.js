@@ -36,7 +36,7 @@ class Header extends Component {
       { id: 4, nav: "Pages" },
       { id: 5, nav: "Shop" },
       { id: 6, nav: "Submit Recepie" },
-    ]
+    ],
   };
   render() {
     return (

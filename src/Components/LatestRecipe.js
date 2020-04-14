@@ -70,7 +70,7 @@ const RecipeTime = styled.div`
   font-weight: 700;
   text-transform: uppercase;
   text-align: end;
-  display:${(props) => (props.view ? "block" : "none")};
+  display: ${(props) => (props.view ? "block" : "none")};
 `;
 const Line = styled.hr`
   color: #e0e0e0;
@@ -102,23 +102,23 @@ const Description = styled.p`
   font-size: 14px;
 `;
 const ListRecipeAlignment = styled.div`
-    float:right;
-    margin-right:10px;
-    color: #909090;
-    font-size: 12px;
-    font-weight: 700;
-    text-transform: uppercase;
-    text-align: end;
-    margin-top:5px;
-    display: ${(props) => (props.view ? "none" : "block")};
-    i{
-        margin-right:5px;
-    }
+  float: right;
+  margin-right: 10px;
+  color: #909090;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: end;
+  margin-top: 5px;
+  display: ${(props) => (props.view ? "none" : "block")};
+  i {
+    margin-right: 5px;
+  }
 `;
 const ListRecipeContainer = styled.div`
-    float:right;
-    width:70%;
-`
+  float: right;
+  width: 70%;
+`;
 class LatestRecipe extends Component {
   state = {
     LatestRecipeContent: [
@@ -266,31 +266,31 @@ class LatestRecipe extends Component {
                   </Description>
                   <Line></Line>
                   <RatingContainer>
-                      <StarRatingComponent
-                        name="rate2"
-                        editing={false}
-                        renderStarIcon={() => (
-                          <i
-                            className="fa fa-star"
-                            aria-hidden="true"
-                            style={{ fontSize: "16px", letterSpacing: "1.5px" }}
-                          ></i>
-                        )}
-                        starCount={5}
-                        value={p.StarRating}
-                        starColor={"#ffc741"}
-                        emptyStarColor={"#e0e0e0"}
-                      ></StarRatingComponent>
+                    <StarRatingComponent
+                      name="rate2"
+                      editing={false}
+                      renderStarIcon={() => (
+                        <i
+                          className="fa fa-star"
+                          aria-hidden="true"
+                          style={{ fontSize: "16px", letterSpacing: "1.5px" }}
+                        ></i>
+                      )}
+                      starCount={5}
+                      value={p.StarRating}
+                      starColor={"#ffc741"}
+                      emptyStarColor={"#e0e0e0"}
+                    ></StarRatingComponent>
                     <ListRecipeContainer>
-                        <ListRecipeAlignment view={this.state.view}>
-                          <i className="fa fa-user" aria-hidden="true"></i>
-                          {p.preparedBy}
-                        </ListRecipeAlignment>
-                        <ListRecipeAlignment view={this.state.view}>
-                          <i className="fa fa-clock-o" aria-hidden="true"></i>
-                          {p.perpTime}
-                        </ListRecipeAlignment>
-                        <ListRecipeAlignment view={this.state.view}>
+                      <ListRecipeAlignment view={this.state.view}>
+                        <i className="fa fa-user" aria-hidden="true"></i>
+                        {p.preparedBy}
+                      </ListRecipeAlignment>
+                      <ListRecipeAlignment view={this.state.view}>
+                        <i className="fa fa-clock-o" aria-hidden="true"></i>
+                        {p.perpTime}
+                      </ListRecipeAlignment>
+                      <ListRecipeAlignment view={this.state.view}>
                         <i className="fa fa-cutlery" aria-hidden="true"></i>
                         {p.servings} servings
                       </ListRecipeAlignment>

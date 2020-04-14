@@ -2,12 +2,12 @@ import React from "react";
 import styled from "styled-components";
 
 const BannerContainer = styled.div`
-    width:100%;
-    height: 415px;
-    position: relative;
-    img{
-        width:100%;
-    }
+  width: 100%;
+  height: 415px;
+  position: relative;
+  img {
+    width: 100%;
+  }
 `;
 const SliderImage = styled.img`
   height: inherit;
@@ -15,7 +15,7 @@ const SliderImage = styled.img`
 const SliderContents = styled.div`
   position: absolute;
   max-width: 960px;
-  margin:0 auto;
+  margin: 0 auto;
   top: 20%;
   right: 0;
   left: 0px;
@@ -99,7 +99,6 @@ export default function Banner(props) {
             <i className="fa fa-user" aria-hidden="true"></i>
             <ServingContent>{props.content.preparedBy}</ServingContent>
           </ServingsContainer>
-
         </RecipeDetails>
         <ViewButton>
           <a href="#View Recipe">View recipe</a>

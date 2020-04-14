@@ -79,7 +79,7 @@ class BannerSlider extends Component {
     return (
       <div>
         <Banner content={this.state.slider_contents[this.state.activeBanner]} />
-        <div className = "wrapper">
+        <div className="wrapper">
           {this.state.Recipe.map((p, index) => (
             <SliderNavBar
               key={p.id}
