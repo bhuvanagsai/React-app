@@ -1,24 +1,7 @@
 import React, { Component } from "react";
-import styled from "styled-components";
+import { SliderNavBar, SliderContent } from "../CommonComponents/Styles";
 import Banner from "./Banner";
 
-const SliderNavBar = styled.div`
-  width: 209px;
-  height: auto;
-  border-left: 1px solid #e3e3e3;
-  padding: 16px 15px;
-  font-size: 14px;
-  font-weight: 650;
-  color: ${(props) => (props.active ? "#fff" : "gray")};
-  background:${(props) => (props.active ? "#8dc63f" : "#f2f2f2")};
-`;
-const SliderContent = styled.div`
-  width: auto;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
 class BannerSlider extends Component {
   state = {
     Recipe: [
@@ -66,7 +49,7 @@ class BannerSlider extends Component {
         preparedBy: "BY SANDRA FORTIN",
       },
     ],
-    activeBanner:0,
+    activeBanner: 0,
   };
   switchHandler = (id) => {
     this.setState({ activeBanner: id });
@@ -79,11 +62,10 @@ class BannerSlider extends Component {
           {this.state.Recipe.map((p, index) => (
             <SliderNavBar
               key={p.id}
-              active = {p.id === this.state.activeBanner}
+              active={p.id === this.state.activeBanner}
               onClick={() => {
                 this.switchHandler(index);
               }}
-
             >
               <SliderContent>
                 <div>

@@ -1,31 +1,5 @@
 import React, { Component } from "react";
-import styled from "styled-components";
-
-const NavBar = styled.li`
-  font-weight: 600;
-  font-size: 14px;
-  border-bottom: 3px solid transparent;
-  padding: 25px 20px;
-  a {
-    text-decoration: none;
-    color: #707070;
-    position: relative;
-  }
-  a:hover {
-    color: #505050;
-  }
-  &:hover {
-    border-bottom: 3px solid #8dc63f !important;
-  }
-`;
-const HeaderNav = styled.ul`
-  display: flex;
-  margin: 0;
-  width: 80%;
-  align-items: center;
-  justify-content: flex-end;
-  list-style: none;
-`;
+import {NavBar,HeaderNav} from '../CommonComponents/Styles';
 
 class Header extends Component {
   state = {
