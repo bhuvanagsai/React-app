@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import StarRatingComponent from "react-star-rating-component";
 import styled from "styled-components";
+import StarRating from '../Components/StarRating';
 
 const HeadLine = styled.div`
   font-size: 22px;
@@ -76,7 +76,7 @@ const Line = styled.hr`
   color: #e0e0e0;
   opacity: 0.2;
 `;
-const View = styled.div`
+const ViewTypeContainer = styled.div`
   background: #8dc63f;
   display: flex;
   float: right;
@@ -129,7 +129,7 @@ class LatestRecipe extends Component {
         Description:
           "Maecenas in massa eget urna ullamcorper pharetra. Curabitur laoreet scelerisque bibendum. Aenean ullamcorper neque ac tristique semper. Phasellus enim mauris, mollis vulputate blandit in, ornare sed leo",
         perpTime: " 30 MIN",
-        StarRating: 5,
+        Rating: 5,
         servings: 4,
         preparedBy: "BY SANDRA FORTIN",
       },
@@ -140,7 +140,7 @@ class LatestRecipe extends Component {
         Description:
           "Maecenas in massa eget urna ullamcorper pharetra. Curabitur laoreet scelerisque bibendum. Aenean ullamcorper neque ac tristique semper. Phasellus enim mauris, mollis vulputate blandit in, ornare sed leo.",
         perpTime: " 1 hr 30 min",
-        StarRating: 3,
+        Rating: 3,
         servings: 4,
         preparedBy: "BY SANDRA FORTIN",
       },
@@ -151,7 +151,7 @@ class LatestRecipe extends Component {
         Description:
           "Maecenas in massa eget urna ullamcorper pharetra. Curabitur laoreet scelerisque bibendum. Aenean ullamcorper neque ac tristique semper. Phasellus enim mauris, mollis vulputate blandit in, ornare sed leo.",
         perpTime: " 45 min",
-        StarRating: 5,
+        Rating: 5,
         servings: 2,
         preparedBy: "BY SANDRA FORTIN",
       },
@@ -162,7 +162,7 @@ class LatestRecipe extends Component {
         Description:
           "Maecenas in massa eget urna ullamcorper pharetra. Curabitur laoreet scelerisque bibendum. Aenean ullamcorper neque ac tristique semper. Phasellus enim mauris, mollis vulputate blandit in, ornare sed leo.",
         perpTime: " 15 min",
-        StarRating: 4,
+        Rating: 4,
         servings: 1,
         preparedBy: "BY SANDRA FORTIN",
       },
@@ -173,7 +173,7 @@ class LatestRecipe extends Component {
         Description:
           "Maecenas in massa eget urna ullamcorper pharetra. Curabitur laoreet scelerisque bibendum. Aenean ullamcorper neque ac tristique semper. Phasellus enim mauris, mollis vulputate blandit in, ornare sed leo.",
         perpTime: "   45 min",
-        StarRating: 5,
+        Rating: 5,
         servings: 2,
         preparedBy: "BY SANDRA FORTIN",
       },
@@ -184,7 +184,7 @@ class LatestRecipe extends Component {
           "Maecenas in massa eget urna ullamcorper pharetra. Curabitur laoreet scelerisque bibendum. Aenean ullamcorper neque ac tristique semper. Phasellus enim mauris, mollis vulputate blandit in, ornare sed leo.",
         RecipeName: "pollo borracho with homemade tortillas",
         perpTime: " 30 min",
-        StarRating: 4,
+        Rating: 4,
         servings: 4,
         preparedBy: "BY SANDRA FORTIN",
       },
@@ -195,7 +195,7 @@ class LatestRecipe extends Component {
         Description:
           "Maecenas in massa eget urna ullamcorper pharetra. Curabitur laoreet scelerisque bibendum. Aenean ullamcorper neque ac tristique semper. Phasellus enim mauris, mollis vulputate blandit in, ornare sed leo.",
         perpTime: " 1 hr 20 min",
-        StarRating: 5,
+        Rating: 5,
         servings: 2,
         preparedBy: "BY SANDRA FORTIN",
       },
@@ -206,7 +206,7 @@ class LatestRecipe extends Component {
         Description:
           "Maecenas in massa eget urna ullamcorper pharetra. Curabitur laoreet scelerisque bibendum. Aenean ullamcorper neque ac tristique semper. Phasellus enim mauris, mollis vulputate blandit in, ornare sed leo.",
         perpTime: " 2 hr 30 min",
-        StarRating: 5,
+        Rating: 5,
         servings: 3,
         preparedBy: "BY SANDRA FORTIN",
       },
@@ -217,14 +217,14 @@ class LatestRecipe extends Component {
         Description:
           "Maecenas in massa eget urna ullamcorper pharetra. Curabitur laoreet scelerisque bibendum. Aenean ullamcorper neque ac tristique semper. Phasellus enim mauris, mollis vulputate blandit in, ornare sed leo.",
         perpTime: "  1 hr 30 min",
-        StarRating: 4,
+        Rating: 4,
         servings: 4,
         preparedBy: "BY SANDRA FORTIN",
       },
     ],
-    list: false,
-    grid: true,
-    view: true,
+    list: 0,
+    grid: 1,
+    view: 1,
   };
   ViewHandler = () => {
     let listView = this.state.list;
@@ -243,14 +243,14 @@ class LatestRecipe extends Component {
             <HeadLine>Latest Recipes</HeadLine>
             <CenterLine></CenterLine>
           </HeaderContainer>
-          <View>
+          <ViewTypeContainer>
             <ViewGrid view={this.state.grid} onClick={this.ViewHandler}>
               Grid
             </ViewGrid>
             <ViewGrid view={this.state.list} onClick={this.ViewHandler}>
               List
             </ViewGrid>
-          </View>
+          </ViewTypeContainer>
 
           <RecipeCardsContainer>
             {this.state.LatestRecipeContent.map((p) => (
@@ -266,21 +266,7 @@ class LatestRecipe extends Component {
                   </Description>
                   <Line></Line>
                   <RatingContainer>
-                    <StarRatingComponent
-                      name="rate2"
-                      editing={false}
-                      renderStarIcon={() => (
-                        <i
-                          className="fa fa-star"
-                          aria-hidden="true"
-                          style={{ fontSize: "16px", letterSpacing: "1.5px" }}
-                        ></i>
-                      )}
-                      starCount={5}
-                      value={p.StarRating}
-                      starColor={"#ffc741"}
-                      emptyStarColor={"#e0e0e0"}
-                    ></StarRatingComponent>
+                    <StarRating rating = {p.Rating}/>
                     <ListRecipeContainer>
                       <ListRecipeAlignment view={this.state.view}>
                         <i className="fa fa-user" aria-hidden="true"></i>
