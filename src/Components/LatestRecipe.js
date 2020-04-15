@@ -223,14 +223,12 @@ class LatestRecipe extends Component {
       },
     ],
     list: 0,
-    grid: 1,
     view: 1,
   };
   ViewHandler = () => {
     let listView = this.state.list;
-    let GridView = this.state.grid;
+    let GridView = !this.state.list;
     this.setState({ list: !listView });
-    this.setState({ grid: !GridView });
     if (listView || GridView) {
       this.setState({ view: !GridView });
     }
@@ -244,7 +242,7 @@ class LatestRecipe extends Component {
             <CenterLine></CenterLine>
           </HeaderContainer>
           <ViewTypeContainer>
-            <ViewGrid view={this.state.grid} onClick={this.ViewHandler}>
+            <ViewGrid view={!this.state.list} onClick={this.ViewHandler}>
               Grid
             </ViewGrid>
             <ViewGrid view={this.state.list} onClick={this.ViewHandler}>

@@ -9,12 +9,8 @@ const SliderNavBar = styled.div`
   padding: 16px 15px;
   font-size: 14px;
   font-weight: 650;
-  color: gray;
-  background: #f2f2f2;
-  &:hover {
-    background: #8dc63f;
-    color: #fff;
-  }
+  color: ${(props) => (props.active ? "#fff" : "gray")};
+  background:${(props) => (props.active ? "#8dc63f" : "#f2f2f2")};
 `;
 const SliderContent = styled.div`
   width: auto;
@@ -70,7 +66,7 @@ class BannerSlider extends Component {
         preparedBy: "BY SANDRA FORTIN",
       },
     ],
-    activeBanner: 0,
+    activeBanner:0,
   };
   switchHandler = (id) => {
     this.setState({ activeBanner: id });
@@ -83,9 +79,11 @@ class BannerSlider extends Component {
           {this.state.Recipe.map((p, index) => (
             <SliderNavBar
               key={p.id}
+              active = {p.id === this.state.activeBanner}
               onClick={() => {
                 this.switchHandler(index);
               }}
+
             >
               <SliderContent>
                 <div>
