@@ -97,6 +97,7 @@ export const NavBar = styled.li`
   font-size: 14px;
   border-bottom: 3px solid transparent;
   padding: 25px 20px;
+  position: relative;
   a {
     text-decoration: none;
     color: #707070;
@@ -105,9 +106,9 @@ export const NavBar = styled.li`
   a:hover {
     color: #505050;
   }
-  &:hover {
+ /* &:hover {
     border-bottom: 3px solid #8dc63f !important;
-  }
+  }  */
 `;
 export const HeaderNav = styled.ul`
   display: flex;
@@ -116,4 +117,22 @@ export const HeaderNav = styled.ul`
   align-items: center;
   justify-content: flex-end;
   list-style: none;
+  position:relative;
 `;
+export const Dropdown = styled.ul`
+    background-color: #333;
+    border-top: 3px solid #8dc63f;
+    list-style: none;
+    padding: 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1;
+    color: #9c9c9c;
+    width: 150px;
+    display:${(props) => (props.hover? "block" : "none")};
+    li{
+      padding:10px;
+      border-bottom:1px solid #9c9c9c; 
+    }
+`

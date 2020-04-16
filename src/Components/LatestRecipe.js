@@ -17,8 +17,8 @@ import {
   RecipeName,
   ListRecipeAlignment,
   ListRecipeContainer,
-  // ImageOverlay,
-  // ViewButton,
+  ImageOverlay,
+  ViewButton,
 } from "../Components/Styles";
 
 import Search from "./Search";
@@ -130,7 +130,7 @@ class LatestRecipe extends Component {
     Ratings: [null, null, null, null, null],
     Is_list: 0,
     view: 1,
-    hover: 0,
+    hover: -1,
   };
   ViewHandler = () => {
     let listView = this.state.Is_list;
@@ -140,14 +140,14 @@ class LatestRecipe extends Component {
       this.setState({ view: !GridView });
     }
   };
-  // ImageHover = () => {
-  //   let hoverStatus = this.state.hover;
-  //   this.setState({ hover: !hoverStatus });
-  // };
-  // ImageHoverLeave = () => {
-  //   let hoverStatus = this.state.hover;
-  //   this.setState({ hover: !hoverStatus });
-  // };
+  MouseEnterHandler = (id) => {
+    
+    this.setState({ hover : id });
+  };
+  MouseLeaveHandler = (id) => {
+    this.setState({hover:"090"})
+    
+  };
   render() {
     return (
       <div className="wrapper wrapper-margin">
@@ -169,15 +169,17 @@ class LatestRecipe extends Component {
             {this.state.LatestRecipeContent.map((p) => (
               <RecipeCards key={p.id} view={this.state.view}>
                 <ImageContainer src={p.RecipeImage}
+                  onMouseEnter = {() => {this.MouseEnterHandler(p.id)}}
+                  onMouseOut= {() => {this.MouseLeaveHandler(p.id)}}
                   view={this.state.view}
                 ></ImageContainer>
-                {/* <ImageOverlay
+                <ImageOverlay 
                   view={this.state.view}
-                  hover={this.state.hover}
-                ></ImageOverlay> */}
-                {/* <ViewButton view={this.state.view} hover={this.state.hover}>
+                  hover={p.id === this.state.hover}
+                ></ImageOverlay>
+                <ViewButton view={this.state.view} hover = {p.id === this.state.hover}>
                   <a href="#View Recipe">View recipe</a>
-                </ViewButton> */}
+                </ViewButton>
                 <RecipeDetails view={this.state.view}>
                   <RecipeName view={this.state.view}>{p.RecipeName}</RecipeName>
                   <Description view={this.state.view}>
