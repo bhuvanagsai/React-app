@@ -17,7 +17,7 @@ const RecipeCard = (props)=>{
                 <ImageContainer src={p.RecipeImage} onMouseEnter = {() => {props.HoverImageIn(p.id)}} onMouseOut= {() => {props.HoverImageOut(p.id)}}view={props.viewStatus}/>
                 <ImageOverlay view={props.viewStatus} hover={p.id == props.hover}/>
                 <ViewButton view={props.viewStatus} hover = {p.id == props.hover} onClick = {() => props.buttonHandler(p)}> 
-                    <NavLink to='/Recipes'>View recipe</NavLink>
+                    View recipe
                 </ViewButton>
                 <RecipeCardDetails details = {p} viewStatus={props.viewStatus} Ratings={props.Ratings}/>
               </RecipeCards>

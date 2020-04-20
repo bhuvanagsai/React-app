@@ -42,7 +42,8 @@ class Header extends Component {
   };
   DropdownHoverOut = (id) => {
     this.setState({ hoverIn: -1 });
-  };
+  };  
+  
   render() {
     return (
       <header className="wrapper">

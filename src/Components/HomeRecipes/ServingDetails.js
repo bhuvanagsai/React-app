@@ -29,7 +29,7 @@ const ServingDetails =(props) =>{
             </ListRecipeAlignment>
             <ListRecipeAlignment >
                 <i className="fa fa-clock-o" aria-hidden="true"></i>
-                {props.servingDetails.perpTime}
+                {props.servingDetails.prepTime}
             </ListRecipeAlignment>
             <ListRecipeAlignment view={props.viewStatus}>
                 <i className="fa fa-cutlery" aria-hidden="true"></i>

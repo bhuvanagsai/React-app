@@ -16,11 +16,11 @@ import {
 export default function Banner(props) {
   return (
     <BannerContainer>
-      <SliderImage src={props.content.slider_img} alt="slider" />
+      <SliderImage src={props.content.RecipeImage} alt="slider" />
       <BannerOverlay />
       <SliderContents>
         <RecipeType>{props.content.type}</RecipeType>
-        <RecipeName>{props.content.recipe}</RecipeName>
+        <RecipeName>{props.content.RecipeName}</RecipeName>
         <RecipeDetails>
           <ServingsContainer>
             <i className="fa fa-cutlery" aria-hidden="true"></i>
@@ -37,8 +37,8 @@ export default function Banner(props) {
             <ServingContent>{props.content.preparedBy}</ServingContent>
           </ServingsContainer>
         </RecipeDetails>
-        <ViewButton >
-          <a href="../Recipes">View recipe</a>
+        <ViewButton onClick = {()=> props.buttonHandler(props.content)}>
+          View recipe
         </ViewButton>
       </SliderContents>
     </BannerContainer>

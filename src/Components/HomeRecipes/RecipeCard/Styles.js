@@ -33,6 +33,7 @@ export const ViewButton = styled.div`
   width: 103px;
   text-align: center;
   position: absolute;
+  color:#fff;
   top: ${(props) => (props.view ? "20%" : "40%")};
   left: ${(props) => (props.view ? "27%" : "10%")};
   display: ${(props) => (props.hover ? "block" : "none")};

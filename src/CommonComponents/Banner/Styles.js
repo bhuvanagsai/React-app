@@ -72,8 +72,5 @@ export const ViewButton = styled.div`
   margin-top: 18px;
   z-index: 10;
   text-align: center;
-  a {
-    text-decoration: none;
-    color: #fff;
-  }
+  color: #fff;
 `;
