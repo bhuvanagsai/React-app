@@ -1,17 +1,17 @@
 import React, { Component } from 'react';
-import {SlideBar,SearchContainer,SearchIcon} from '../Components/Styles';
-import Author from './AuthorCard';
+import {SideBar,SearchContainer,SearchIcon} from '../Search/Styles';
+import Author from '../AuthorCard/AuthorCard';
 
 class Search extends Component{
     render(){
         return(
-            <SlideBar>
+            <SideBar>
                 <SearchContainer>
                     <input placeholder = "Search for recipes"/>
                     <SearchIcon><i className="fa fa-search" aria-hidden="true"></i></SearchIcon>
                 </SearchContainer>    
                 <Author/>            
-            </SlideBar>
+            </SideBar>
         );
     }
 

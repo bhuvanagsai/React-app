@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import { SliderNavBar, SliderContent } from "../CommonComponents/Styles";
-import Banner from "./Banner";
+import { SliderNavBar, SliderContent } from '../BannerSlider/Styles';
+import Banner from '../Banner/Banner';
+// import RecipePage from "../../Components/RecipePage";
 
 class BannerSlider extends Component {
   state = {
@@ -14,39 +15,47 @@ class BannerSlider extends Component {
     slider_contents: [
       {
         id: 0,
-        slider_img: require("../Assets/sliderA_01.jpg"),
+        slider_img: require("../../assets/sliderA_01.jpg"),
         type: "BAKING",
         recipe: "Mexican Grilled Corn Recipe",
         servings: 4,
         prepTime: "30 mins",
+        cooking :"",
         preparedBy: "BY SANDRA FORTIN",
+        calories:"632 Kcal"
       },
       {
         id: 1,
-        slider_img: require("../Assets/sliderA_02.jpg"),
+        slider_img: require("../../assets/sliderA_02.jpg"),
         type: "CURRY",
         recipe: "Roast Chicken With Lemon Gravy",
         servings: 4,
-        prepTime: "1 Hr 30 mins",
+        prepTime: " 30 mins",
+        cooking:"1 Hr",
         preparedBy: "BY SANDRA FORTIN",
+        calories:"632 Kcal"
       },
       {
         id: 2,
-        slider_img: require("../Assets/sliderA_03.jpg"),
+        slider_img: require("../../assets/sliderA_03.jpg"),
         type: "SALADS",
         recipe: "Avocado Melon Salad With Lime Vinaigrette",
         servings: 2,
         prepTime: "15 mins",
+        cooking:"",
         preparedBy: "BY SANDRA FORTIN",
+
       },
       {
         id: 3,
-        slider_img: require("../Assets/sliderA_04.jpg"),
+        slider_img: require("../../assets/sliderA_04.jpg"),
         type: "BEEF",
         recipe: "Chunky Beef Stew",
         servings: 1,
-        prepTime: "2 Hr 30 mins",
+        prepTime: "30 mins",
+        cooking: "2 Hr",
         preparedBy: "BY SANDRA FORTIN",
+        calories:"632 Kcal"
       },
     ],
     activeBanner: 0,
@@ -77,6 +86,7 @@ class BannerSlider extends Component {
             </SliderNavBar>
           ))}
         </div>
+        {/* <RecipePage R = {this.state.activeBanner} /> */}
       </div>
     );
   }

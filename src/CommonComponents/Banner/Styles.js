@@ -2,10 +2,11 @@ import styled from 'styled-components';
 
 export const BannerContainer = styled.div`
   width: 100%;
-  height: 415px;
+  height: ${(props)=> (props.RecipeBanner ? "220px" : "415px")};
   position: relative;
   img {
     width: 100%;
+    height: inherit;
   }
 `;
 export const SliderImage = styled.img`
@@ -47,6 +48,7 @@ export const ServingsContainer = styled.div`
   margin-right: 15px;
   display: flex;
   align-items: center;
+  font-family: open sans,helveticaneue,helvetica neue,Helvetica,Arial,sans-serif;
 `;
 export const ServingContent = styled.div`
   padding: 0px 5px;
@@ -75,64 +77,3 @@ export const ViewButton = styled.div`
     color: #fff;
   }
 `;
-export const SliderNavBar = styled.div`
-  width: 209px;
-  height: auto;
-  border-left: 1px solid #e3e3e3;
-  padding: 16px 15px;
-  font-size: 14px;
-  font-weight: 650;
-  color: ${(props) => (props.active ? "#fff" : "gray")};
-  background:${(props) => (props.active ? "#8dc63f" : "#f2f2f2")};
-`;
-export const SliderContent = styled.div`
-  width: auto;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
-export const NavBar = styled.li`
-  font-weight: 600;
-  font-size: 14px;
-  border-bottom: 3px solid transparent;
-  padding: 25px 20px;
-  position: relative;
-  a {
-    text-decoration: none;
-    color: #707070;
-    position: relative;
-  }
-  a:hover {
-    color: #505050;
-  }
- /* &:hover {
-    border-bottom: 3px solid #8dc63f !important;
-  }  */
-`;
-export const HeaderNav = styled.ul`
-  display: flex;
-  margin: 0;
-  width: 80%;
-  align-items: center;
-  justify-content: flex-end;
-  list-style: none;
-  position:relative;
-`;
-export const Dropdown = styled.ul`
-    background-color: #333;
-    border-top: 3px solid #8dc63f;
-    list-style: none;
-    padding: 0;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    z-index: 1;
-    color: #9c9c9c;
-    width: 150px;
-    display:${(props) => (props.hover? "block" : "none")};
-    li{
-      padding:10px;
-      border-bottom:1px solid #9c9c9c; 
-    }
-`

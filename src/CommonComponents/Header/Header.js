@@ -1,6 +1,13 @@
 import React, { Component } from "react";
-// import {HeaderNav} from '../CommonComponents/Styles';
-import HeaderDropdown from "../CommonComponents/HeaderDropDown";
+import HeaderComponent from '../HeaderComponent/HeaderComponent';
+import styled from 'styled-components';
+
+const LogoWrapper = styled.div`
+  width: auto;
+  img {
+    padding-top: 20px;
+  }
+`;
 class Header extends Component {
   state = {
     headerItems: [
@@ -32,20 +39,24 @@ class Header extends Component {
   };
   DropdownHoverIn = (id) => {
     this.setState({ hoverIn: id });
-    console.log(this.state.hoverIn);
   };
   DropdownHoverOut = (id) => {
-    // console.log(this.state.hoverIn)
     this.setState({ hoverIn: -1 });
   };
   render() {
     return (
-      <HeaderDropdown
-        HeaderDropdownContent={this.state.headerItems}
-        hoverStatus={this.state.hoverIn}
-        DropdownHoverEnter={this.DropdownHoverIn}
-        DropdownHoverLeave={this.DropdownHoverOut}
-      />
+      <header className="wrapper">
+        <LogoWrapper>
+          <img src={require('../../assets/logo.jpg')} alt="logo" />
+        </LogoWrapper>
+        <HeaderComponent
+          HeaderDropdownContent={this.state.headerItems}
+          hoverStatus={this.state.hoverIn}
+          DropdownHoverEnter={this.DropdownHoverIn}
+          DropdownHoverLeave={this.DropdownHoverOut}
+        />
+      </header>
+      
     );
   }
 }

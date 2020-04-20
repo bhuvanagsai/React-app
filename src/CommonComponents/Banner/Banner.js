@@ -1,4 +1,5 @@
 import React from "react";
+
 import {
   BannerContainer,
   SliderImage,
@@ -10,7 +11,7 @@ import {
   RecipeDetails,
   ViewButton,
   ServingContent,
-} from "../CommonComponents/Styles";
+} from '../Banner/Styles';
 
 export default function Banner(props) {
   return (
@@ -28,7 +29,7 @@ export default function Banner(props) {
 
           <ServingsContainer>
             <i className="fa fa-clock-o" aria-hidden="true"></i>
-            <ServingContent>{props.content.prepTime}</ServingContent>
+            <ServingContent>{props.content.cooking} {props.content.prepTime}</ServingContent>
           </ServingsContainer>
 
           <ServingsContainer>
@@ -36,8 +37,8 @@ export default function Banner(props) {
             <ServingContent>{props.content.preparedBy}</ServingContent>
           </ServingsContainer>
         </RecipeDetails>
-        <ViewButton>
-          <a href="#View Recipe">View recipe</a>
+        <ViewButton >
+          <a href="../Recipes">View recipe</a>
         </ViewButton>
       </SliderContents>
     </BannerContainer>
