@@ -42,8 +42,8 @@ export default function Ingredients(props){
     return(
     
         <IngredientsContainer>
-            {props.ingredients.ingredients.map((p) =>(
-                <IngredientsAdded key = {p.id}>
+            {props.ingredients.ingredients.map((p,index) =>(
+                <IngredientsAdded key = {index}>
                     <label className="container">{p}
                         <input type="checkbox"/>
                         <span className="checkmark"></span>

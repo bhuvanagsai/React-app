@@ -1,4 +1,4 @@
-import React , {Component} from 'react';
+import React  from 'react';
 import Search from '../../CommonComponents/Search/Search';
 import {RecipeBannerContainer} from '../Styles';
 import {TitleAlignment ,RecipeHeading,RatingsContainer,RecipeImageContainer,RecipeDetails,PrintButton,RecipeDescription} from './Styles';
@@ -24,7 +24,7 @@ const RecipePage = (props) =>{
                             <RatingsContainer>
                                 {[null,null,null,null,null].map((_, index) => {
                                 return (
-                                <StarRating
+                                <StarRating key = {index}
                                     color={"#ffc741"}
                                 />
                                 );

@@ -4,9 +4,7 @@ import{  RecipeCardsContainer,
     ImageContainer,
     ImageOverlay,
     ViewButton,
-    Link
 } from './Styles';
-import { BrowserRouter as NavLink } from "react-router-dom";
 import RecipeCardDetails from '../RecipeCardDetails/RecipeCardDetails';
 
 const RecipeCard = (props)=>{

@@ -4,6 +4,8 @@ body {
     'sans-serif' ,'Arvo', serif ,'Open Sans', 'sans-serif';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  height:100%;
+  
 }
 
 code {
@@ -17,6 +19,9 @@ code {
 }
 .wrapper-margin{
   margin-top:40px;
+}
+ul{
+  padding: 0;
 }
 li{
   list-style: none;

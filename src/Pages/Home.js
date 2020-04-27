@@ -1,12 +1,15 @@
-import React, { Component } from "react";
+import React from "react";
 import BannerSlider from "../CommonComponents/BannerSlider/BannerSlider";
 import LatestRecipe from "../Components/HomeRecipes/LatestRecipeCard/LatestRecipe";
-
-export default function Home(props){
+import Header from "../CommonComponents/Header/Header";
+import Footer from '../CommonComponents/Footer/Footer';
+export default function Home(){
     return(
         <div>
+            <Header/>
             <BannerSlider/>
             <LatestRecipe />
+            <Footer/>
         </div>
         
     );

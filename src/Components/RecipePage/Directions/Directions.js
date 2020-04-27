@@ -21,7 +21,7 @@ export default function Directions(props){
     return (
         <ul style = {{padding:0}}>
             {props.directions.directions.map((p,index)=>(
-                <DirectionsContainer>
+                <DirectionsContainer key = {index}>
                     <div >{index+1}</div>
                     <DirectionSteps>{p}</DirectionSteps>
                 </DirectionsContainer>

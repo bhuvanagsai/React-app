@@ -13,18 +13,18 @@ const HeaderComponent = (props) => {
         if (p.subLink === 0) {
           return (
             <NavBar key = {p.id}>
-              <NavigationLink href={p.nav}>{p.nav}</NavigationLink>
+              <NavigationLink href="">{p.nav}</NavigationLink>
             </NavBar>
           );
         } else {
           return (
-            <div
+            <div key = {index+5}
               style={{ position: "relative" }}
               onMouseEnter={() => props.DropdownHoverEnter(index)}
               onMouseLeave={() => props.DropdownHoverLeave(index)}
             >
               <NavBar>
-                <NavigationLink href={p.nav}>{p.nav}</NavigationLink>
+                <NavigationLink href="">{p.nav}</NavigationLink>
                 <i
                   className="fa fa-caret-down"
                   aria-hidden="true"
@@ -32,10 +32,10 @@ const HeaderComponent = (props) => {
                 ></i>
               </NavBar>
               <Dropdown hover={p.id == props.hoverStatus}>
-                {p.subLinks.map((p) => {
+                {p.subLinks.map((p,index) => {
                   return (
-                    <li>
-                      <NavLink href={p}>{p}</NavLink>
+                    <li key = {index+1}>
+                      <NavLink href="">{p}</NavLink>
                     </li>
                   );
                 })}

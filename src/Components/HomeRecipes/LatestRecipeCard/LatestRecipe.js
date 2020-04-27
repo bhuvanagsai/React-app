@@ -287,7 +287,6 @@ class LatestRecipe extends Component {
     Is_list: 0,
     view: 1,
     hover: -1,
-    details: null,
   };
   ViewHandler = () => {
     let listView = this.state.Is_list;
@@ -300,20 +299,14 @@ class LatestRecipe extends Component {
   MouseEnterHandler = (id) => {
     this.setState({ hover: id });
   };
-  MouseLeaveHandler = (id) => {
-    this.setState({ hover: "090" });
+  MouseLeaveHandler = () => {
+    this.setState({ hover: "-1" });
   };
   buttonHandler = (content) => {
     this.props.history.push({
       pathname: "Recipes",
       state: content,
     });
-    // this.props.history.push({
-    //   pathname: 'Recipes',
-    //   state : content
-    // });
-    // this.props.history.push(content);
-    // console.log(this.props.history.location);
   };
   render() {
     return (

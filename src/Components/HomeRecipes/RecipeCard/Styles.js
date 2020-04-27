@@ -37,6 +37,7 @@ export const ViewButton = styled.div`
   top: ${(props) => (props.view ? "20%" : "40%")};
   left: ${(props) => (props.view ? "27%" : "10%")};
   display: ${(props) => (props.hover ? "block" : "none")};
+  opacity: ${(props) => (props.hover ? "1" : "0")};
 `;
 export const Link = styled.a`
   text-decoration: none;

@@ -20,7 +20,7 @@ const RecipeCardDetails = (props) =>{
             <RatingContainer view={props.viewStatus}>
                 {props.Ratings.map((_, index) => {
                     return (
-                    <StarRating
+                    <StarRating key ={index}
                         color={index < props.details.Rating ? "#ffc741" : "#e0e0e0"}
                     />
                     );

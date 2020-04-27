@@ -141,7 +141,6 @@ class BannerSlider extends Component {
       pathname: "Recipes",
       state: content,
     });
-    console.log(this.props.history.location.state);
  }
   render() {
     return (

@@ -5,7 +5,7 @@ class RecipeBanner extends Component{
     render(){
         return(
             <BannerContainer RecipeBanner>
-                <img src = {require('../../assets/recipeBackground.jpg')} alt = "rtyu"></img>
+                <img src = {require('../../assets/recipeBackground.jpg')} alt = "Recipe Banner_Image"></img>
                 <BannerOverlay />
             </BannerContainer>
         );
