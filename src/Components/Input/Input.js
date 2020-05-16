@@ -4,7 +4,10 @@ const input = (props) =>{
     return(
         <InputComponent>
             <label>{props.label}</label>
-            <Input {...props.elementConfig} value = {props.value} onChange ={props.changed}/>
+            <div style = {{position : "relative"}}>
+                <Input {...props.elementConfig} value = {props.value} onChange ={props.changed}/>
+                {/* {props.label === 'Password' ? <EyeIcon onClick = {props.togglePassword} className="fa fa-eye" aria-hidden="true"></EyeIcon> : ''} */}
+            </div>
             <ErrorMessage errMsgStatus=  {props.ErrorMessage}>Please Enter the Valid {props.label}</ErrorMessage>
         </InputComponent>
     );

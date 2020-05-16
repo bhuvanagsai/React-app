@@ -58,7 +58,9 @@ class SignUp extends Component {
         ErrorMessage : 0
       },
     },
-    UserErrorMsg : 0
+    UserErrorMsg : 0,
+    
+
   };
   loginHandler = () => {
         this.props.history.push({

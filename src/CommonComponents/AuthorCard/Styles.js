@@ -17,6 +17,8 @@ export const AuthorContact = styled.div`
   }
   p {
     color: gray;
+    font-size: 14px;
+    line-height: 24px;
   }
 `;
 export const AuthorDetails = styled.div`

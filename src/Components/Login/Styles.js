@@ -55,3 +55,8 @@ export const ErrorMessage = styled.p`
     font-family: open sans,helveticaneue;
     display:${(props) => (props.errMsgStatus ? "block" : "none")};
 `
+export const EyeIcon = styled.i`
+    position: absolute;
+    right:2%;
+    bottom:20%;
+`

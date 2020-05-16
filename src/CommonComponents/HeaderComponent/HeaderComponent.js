@@ -13,7 +13,7 @@ const HeaderComponent = (props) => {
         if (p.subLink === 0) {
           return (
             <NavBar key = {p.id}>
-              <NavigationLink href="">{p.nav}</NavigationLink>
+              <NavigationLink href={p.map}>{p.nav}</NavigationLink>
             </NavBar>
           );
         } else {
@@ -24,7 +24,7 @@ const HeaderComponent = (props) => {
               onMouseLeave={() => props.DropdownHoverLeave(index)}
             >
               <NavBar>
-                <NavigationLink href="">{p.nav}</NavigationLink>
+                <NavigationLink href={p.map}>{p.nav}</NavigationLink>
                 <i
                   className="fa fa-caret-down"
                   aria-hidden="true"

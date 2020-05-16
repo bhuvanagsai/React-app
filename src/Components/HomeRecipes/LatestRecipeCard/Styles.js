@@ -22,4 +22,5 @@ export const CenterLine = styled.div`
   height: 1px;
   background: #ebebeb;
   margin-top: 5px;
+  float:right;
 `;

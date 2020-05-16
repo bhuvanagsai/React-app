@@ -3,7 +3,7 @@ import HeaderComponent from '../HeaderComponent/HeaderComponent';
 import styled from 'styled-components';
 
 const LogoWrapper = styled.div`
-  width: auto;
+  width: 20%;
   img {
     padding-top: 20px;
   }
@@ -11,36 +11,40 @@ const LogoWrapper = styled.div`
 class Header extends Component {
   state = {
     headerItems: [
-      { id: "0", nav: "Home", subLink: 0 },
+      { id: "0", nav: "Home", subLink: 0 ,map : "home" },
       {
         id: "1",
         nav: "Demos",
         subLinks: ["Grid Homepage", "List Homepage", "Boxed Version"],
+        map : "Demos" 
       },
       {
         id: "2",
         nav: "Recipes",
         subLinks: ["Browse Recipes", "Recipe Page #1", "Recipe Page #2"],
+        map : "home" 
       },
       {
         id: "3",
         nav: "Pages",
         subLinks: ["Shortcodes", "Typography", "Contact"],
+        map : "home" 
       },
       {
         id: "4",
         nav: "Shop",
         subLinks: ["Shop", "Product Page"],
+        map : "Shop" 
       },
 
-      { id: "4", nav: "Submit Recipe", subLink: 0 },
+      { id: "5", nav: "Submit Recipe", subLink: 0 ,map : "Submit Recipe" },
     ],
     hoverIn: 0,
   };
   DropdownHoverIn = (id) => {
     this.setState({ hoverIn: id });
   };
-  DropdownHoverOut = (id) => {
+  DropdownHoverOut = () => {
     this.setState({ hoverIn: -1 });
   };  
   

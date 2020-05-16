@@ -43,3 +43,9 @@ export const Link = styled.a`
   text-decoration: none;
     color: #fff;
 `
+export const RecipeNotFound = styled.p`
+  color:#8dc63f;
+  font-weight: 600;
+  text-align: center;
+  margin: 20%;
+`

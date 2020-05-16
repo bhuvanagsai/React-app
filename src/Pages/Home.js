@@ -4,6 +4,7 @@ import LatestRecipe from "../Components/HomeRecipes/LatestRecipeCard/LatestRecip
 import Header from "../CommonComponents/Header/Header";
 import Footer from '../CommonComponents/Footer/Footer';
 export default function Home(){
+    
     return(
         <div>
             <Header/>

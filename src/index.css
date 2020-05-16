@@ -7,10 +7,14 @@ body {
   height:100%;
   
 }
-
+h1,h2,h3,h4,h5,h6{
+  color: #606060;
+  font-weight: 400;
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+    
 }
 .wrapper{
   max-width: 960px;
@@ -25,4 +29,7 @@ ul{
 }
 li{
   list-style: none;
+}
+a{
+  text-decoration: none;
 }

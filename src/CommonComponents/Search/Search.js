@@ -1,19 +1,17 @@
-import React, { Component } from 'react';
+import React  from 'react';
 import {SideBar,SearchContainer,SearchIcon} from '../Search/Styles';
 import Author from '../AuthorCard/AuthorCard';
 
-class Search extends Component{
-    render(){
+const  Search = (props) => {
         return(
             <SideBar>
                 <SearchContainer>
-                    <input placeholder = "Search for recipes"/>
+                    <input placeholder = "Search for recipes" onChange = {props.SearchChange}/>
                     <SearchIcon><i className="fa fa-search" aria-hidden="true"></i></SearchIcon>
                 </SearchContainer>    
                 <Author/>            
             </SideBar>
         );
-    }
 
 }
 

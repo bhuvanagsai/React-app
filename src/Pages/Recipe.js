@@ -4,7 +4,7 @@ import RecipePage from "../Components/RecipePage/RecipePage";
 import Header from "../CommonComponents/Header/Header";
 import Footer from "../CommonComponents/Footer/Footer";
 export default function Recipe(props){
-    const  recipedata =  props.history.location.state;
+    const  recipedata =  props.history.location.state.RecipeData;
     useEffect(() =>{
         if(!recipedata){
             props.history.push({
@@ -17,7 +17,7 @@ export default function Recipe(props){
         <div>
             <Header/>
             <RecipeBanner/>
-            <RecipePage data = {recipedata}/>
+            <RecipePage data = {recipedata} />
             <Footer/>
         </div>
         

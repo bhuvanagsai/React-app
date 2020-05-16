@@ -287,6 +287,20 @@ class LatestRecipe extends Component {
     Is_list: 0,
     view: 1,
     hover: -1,
+    SearchText  : null
+  };
+  SearchTextHandler = (event) =>{
+    const { value } = event.target;
+    const lowercasedValue = value.toLowerCase();
+    this.setState({SearchText : lowercasedValue})
+  }
+  handleSearchChange = () => {
+    this.setState(prevState => {
+      const filteredData = prevState.LatestRecipeContent.filter(el =>
+        el.RecipeName.toLowerCase().includes(this.state.SearchText)
+      );
+      return{ filteredData};
+    });
   };
   ViewHandler = () => {
     let listView = this.state.Is_list;
@@ -303,12 +317,16 @@ class LatestRecipe extends Component {
     this.setState({ hover: "-1" });
   };
   buttonHandler = (content) => {
+    console.log(content)
     this.props.history.push({
       pathname: "Recipes",
-      state: content,
+      state: {
+        RecipeData : content
+      }
     });
   };
   render() {
+    const {filteredData} = this.state;
     return (
       <div className="wrapper wrapper-margin">
         <RecipeLatestWrapper>
@@ -321,7 +339,7 @@ class LatestRecipe extends Component {
             viewStatus={this.state.view}
           ></ViewType>
           <RecipeCard
-            cardDetails={this.state.LatestRecipeContent}
+            cardDetails={filteredData === undefined ?  this.state.LatestRecipeContent : filteredData}
             viewStatus={this.state.view}
             hover={this.state.hover}
             Ratings={this.state.Ratings}
@@ -329,8 +347,10 @@ class LatestRecipe extends Component {
             HoverImageOut={this.MouseLeaveHandler}
             buttonHandler={this.buttonHandler}
           />
+          {/* {this.state.filterdata.length === 0 ?<p style = {{display: "none"}}></p>: <p style = {{color:"#8dc63f"}}>Recipe Not Found</p>} */}
+          
         </RecipeLatestWrapper>
-        <Search />
+        <Search filterdata = {this.state.LatestRecipeContent} SearchChange = {this.handleSearchChange}/>
       </div>
     );
   }

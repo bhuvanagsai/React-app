@@ -8,6 +8,8 @@ import {
   ErrorMessage
 } from "../Login/Styles";
 import Input from "../Input/Input";
+import {connect} from 'react-redux';
+
 class Login extends Component {
   state = {
     loginForm: {
@@ -39,20 +41,21 @@ class Login extends Component {
     let password = this.state.loginForm.Password.value;
     if(localStorage.length !== 0){
       var items = JSON.parse(localStorage.users); 
-      console.log(items)
       let obj = items.find(obj => obj.UserName === username && obj.Password === password);
-      console.log(obj);
       if(obj) {
         this.FormValidation();
+        sessionStorage.setItem("auth",true);
+        this.props.LoggedInStatus();
         this.props.history.push({
           pathname: "Home",
-        });
+          });
         
       }
       else{
         this.FormValidation();
         this.props.history.push({
           pathname: "/",
+          
         });
       }
     }
@@ -133,4 +136,9 @@ class Login extends Component {
     );
   }
 }
-export default Login;
+const mapDispatchToProps = dispatch => {
+  return {
+    LoggedInStatus : () => dispatch({type : 'LOGIN'})
+  };  
+}
+export default connect (null ,mapDispatchToProps) (Login);

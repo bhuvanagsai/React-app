@@ -139,7 +139,9 @@ class BannerSlider extends Component {
   ViewbuttonHandler = (content) => {
     this.props.history.push({
       pathname: "Recipes",
-      state: content,
+      state :{
+        RecipeData :content
+      } ,
     });
  }
   render() {
