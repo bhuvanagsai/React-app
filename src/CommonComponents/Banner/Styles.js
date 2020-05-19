@@ -30,7 +30,7 @@ export const BannerOverlay = styled.div`
 `;
 export const RecipeType = styled.div`
   width: max-content;
-  background: #8dc63f;
+  background: ${(props) => props.theme.primaryColor};
   color: #fff;
   padding: 5px 9px;
   font-size: 13px;

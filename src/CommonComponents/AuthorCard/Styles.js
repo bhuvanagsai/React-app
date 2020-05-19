@@ -25,8 +25,13 @@ export const AuthorDetails = styled.div`
   width: 60%;
   float: left;
 `;
+export const AuthorName = styled.div`
+  color : #606060;
+   font-weight : 700;
+    font-size : 20px;
+`;
 export const AuthorInfo = styled.div`
-  font-size: ${(props) => props.fontSize};
-  font-weight: ${(props) => props.fontWeight};
-  color: ${(props) => props.color};
+    color : ${(props) => props.theme.primaryColor};
+   font-weight : 600;
+    font-size : 13px;
 `;

@@ -16,7 +16,7 @@ const RecipeCard = (props)=>{
         <RecipeCardsContainer>
         {props.cardDetails.map((p) => (
             <RecipeCards key={p.id} view={props.viewStatus}>
-            <ImageContainer src={p.RecipeImage} onMouseEnter = {() => {props.HoverImageIn(p.id)}} onMouseOut= {() => {props.HoverImageOut(p.id)}}view={props.viewStatus}/>
+            <ImageContainer src={p.RecipeImage}  alt = "Recipe image" onMouseEnter = {() => {props.HoverImageIn(p.id)}} onMouseOut= {() => {props.HoverImageOut(p.id)}}view={props.viewStatus}/>
             <ImageOverlay view={props.viewStatus} hover={p.id == props.hover}/>
             <ViewButton view={props.viewStatus} hover = {p.id == props.hover} onClick = {() => props.buttonHandler(p)}> 
                 View recipe

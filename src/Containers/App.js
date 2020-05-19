@@ -7,37 +7,39 @@ import SignUp from '../Components/SignUp/SignUp';
 import 'font-awesome/css/font-awesome.min.css';
 import Routing from "../Routes/Routing";
 import pageNotFound from '../Pages/404-Page/pageNotFound';
+import Themes from "../CommonComponents/ThemeSetting/ThemeSetting";
 const AppWrapper = styled.div`
   min-width: auto;
   max-width: 100%;
 `;
 class App extends Component {
   render() {
-    
     return (
-      <AppWrapper>
-        <Router>
-          <Switch> 
-            <Route path="/SignUp" exact component = {SignUp}/>
-            <Route path="/" exact component = {Login}/> 
-            <Route path = {["/Home", "/Recipes","/Shop", "/ProductPage"]} exact 
-            render={() =>
-              this.props.LoggedIn === 'true' ? (
-                <Routing/>
-              ) : (
-                <Redirect to="/" />
-              )
-            }
-            />
-            <Route path =  "*" exact component = {pageNotFound}/>
-          </Switch>
-        </Router>
-      </AppWrapper>
+      <Themes>
+        <AppWrapper>
+          <Router>
+            <Switch> 
+              <Route path="/SignUp" exact component = {SignUp}/>
+              <Route path="/" exact component = {Login}/> 
+              <Route path = {["/Home", "/Recipes","/Shop", "/ProductPage"]} exact 
+              render={() =>
+                this.props.LoggedIn === 'true' ? (
+                  <Routing/>
+                ) : (
+                  <Redirect to="/" />
+                )
+              }
+              />
+              <Route path =  "*" exact component = {pageNotFound}/>
+            </Switch>
+          </Router>
+        </AppWrapper>
+      </Themes>
     );
   }
 }
 const mapStateToProps = (state) => {
-  console.log(state.isLoggedIn);
+
   return {
     
     LoggedIn: state.LoggedIn,

@@ -24,15 +24,15 @@ const ServingDetails =(props) =>{
     return (
         <ListRecipeContainer view={props.viewStatus}>
             <ListRecipeAlignment view={props.viewStatus}>
-                <i className="fa fa-user" aria-hidden="true"></i>
+                <i className="fa fa-user" aria-hidden="true" title  = "User icon"></i>
                 {props.servingDetails.preparedBy}
             </ListRecipeAlignment>
             <ListRecipeAlignment >
-                <i className="fa fa-clock-o" aria-hidden="true"></i>
+                <i className="fa fa-clock-o" aria-hidden="true" title = "Clock icon"></i>
                 {props.servingDetails.prepTime}
             </ListRecipeAlignment>
             <ListRecipeAlignment view={props.viewStatus}>
-                <i className="fa fa-cutlery" aria-hidden="true"></i>
+                <i className="fa fa-cutlery" aria-hidden="true" title = "cutlery icon"></i>
                 {props.servingDetails.servings} servings
             </ListRecipeAlignment>
         </ListRecipeContainer>

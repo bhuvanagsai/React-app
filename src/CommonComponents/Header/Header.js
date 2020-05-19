@@ -14,30 +14,18 @@ class Header extends Component {
       { id: "0", nav: "Home", subLink: 0 ,map : "home" },
       {
         id: "1",
-        nav: "Demos",
-        subLinks: ["Grid Homepage", "List Homepage", "Boxed Version"],
-        map : "Demos" 
-      },
-      {
-        id: "2",
         nav: "Recipes",
         subLinks: ["Browse Recipes", "Recipe Page #1", "Recipe Page #2"],
         map : "home" 
       },
       {
-        id: "3",
-        nav: "Pages",
-        subLinks: ["Shortcodes", "Typography", "Contact"],
-        map : "home" 
-      },
-      {
-        id: "4",
+        id: "2",
         nav: "Shop",
         subLinks: ["Shop", "Product Page"],
         map : "Shop" 
       },
 
-      { id: "5", nav: "Submit Recipe", subLink: 0 ,map : "Submit Recipe" },
+      { id: "3", nav: "Submit Recipe", subLink: 0 ,map : "Submit Recipe" },
     ],
     hoverIn: 0,
   };

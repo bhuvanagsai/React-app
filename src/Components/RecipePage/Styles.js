@@ -33,7 +33,7 @@ export const RecipeDetails = styled.div`
 `
 export const PrintButton = styled.button`
     float: right;
-    background: #8dc63f;
+    background: ${(props) => props.theme.primaryColor};
     width: 74px;
     padding: 8px;
     color: white;

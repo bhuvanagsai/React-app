@@ -40,11 +40,11 @@ export const ProductPrice = styled.div`
 export const ProductCart = styled.div`
     width: 42px;
     height: 42px;
-    background-color: #8dc63f;
+    background-color: ${(props)=> props.theme.primaryColor};
     position: absolute;
     right: 0;
     opacity: ${(props) => (props.hover ? "1" : "0")};
-    transition:color 0.2s ease-in-out;
+    transition: top 0.5s ease-out;
     bottom : ${(props) => (props.hover ? "30%" : "16%")};
 `
 export const CartIcon = styled.i`

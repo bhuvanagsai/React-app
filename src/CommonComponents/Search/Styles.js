@@ -21,7 +21,7 @@ export const SearchContainer = styled.div`
   }
 `;
 export const SearchIcon = styled.div`
-  background: #8dc63f;
+  background:${(props) => props.theme.primaryColor};
   padding: 11px 12px;
   width: 10%;
   color: #fff;

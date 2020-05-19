@@ -293,6 +293,7 @@ class LatestRecipe extends Component {
     const { value } = event.target;
     const lowercasedValue = value.toLowerCase();
     this.setState({SearchText : lowercasedValue})
+    this.handleSearchChange();
   }
   handleSearchChange = () => {
     this.setState(prevState => {
@@ -317,7 +318,6 @@ class LatestRecipe extends Component {
     this.setState({ hover: "-1" });
   };
   buttonHandler = (content) => {
-    console.log(content)
     this.props.history.push({
       pathname: "Recipes",
       state: {
@@ -346,11 +346,9 @@ class LatestRecipe extends Component {
             HoverImageIn={this.MouseEnterHandler}
             HoverImageOut={this.MouseLeaveHandler}
             buttonHandler={this.buttonHandler}
-          />
-          {/* {this.state.filterdata.length === 0 ?<p style = {{display: "none"}}></p>: <p style = {{color:"#8dc63f"}}>Recipe Not Found</p>} */}
-          
+          />          
         </RecipeLatestWrapper>
-        <Search filterdata = {this.state.LatestRecipeContent} SearchChange = {this.handleSearchChange}/>
+        <Search filterdata = {this.state.LatestRecipeContent} SearchText = {this.SearchTextHandler}/>
       </div>
     );
   }

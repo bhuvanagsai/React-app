@@ -8,7 +8,7 @@ export const SliderNavBar = styled.div`
   font-size: 14px;
   font-weight: 650;
   color: ${(props) => (props.active ? "#fff" : "gray")};
-  background:${(props) => (props.active ? "#8dc63f" : "#f2f2f2")};
+  background:${(props) => (props.active ? props.theme.primaryColor : "#f2f2f2")};
 `;
 export const SliderContent = styled.div`
   width: auto;

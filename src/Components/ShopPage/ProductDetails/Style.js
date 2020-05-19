@@ -33,7 +33,7 @@ export const CartIncre = styled.i`
     color: #fff;
     background-color: silver;
     &:hover{
-        background-color: #8dc63f; 
+        background-color: ${(props)=> props.theme.primaryColor}; 
     }
 `
 export const Quantity  = styled.input`
@@ -46,7 +46,7 @@ export const Quantity  = styled.input`
     text-align: center;
 `
 export const AddToCartContainer = styled.div`
-    background-color: #8dc63f;
+    background-color: ${(props)=> props.theme.primaryColor};
     color:#fff;
     margin-left:10px;
     display: flex;

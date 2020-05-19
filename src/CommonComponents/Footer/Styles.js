@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 export const SubcribeBtn = styled.button`
-    background: #8dc63f;
+    background:${(props)=> props.theme.primaryColor};
     padding: 11px 12px;
     width: 33%;
     color: #fff;

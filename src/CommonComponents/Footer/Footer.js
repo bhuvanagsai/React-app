@@ -72,7 +72,7 @@ class Footer extends Component {
                         gift ideas, sales and more.
                         </p>
                         <SubcribeContainer>
-                        <input placeholder="mail@example.com" type="text" />
+                        <input placeholder="mail@example.com" type="text" title = "Enter the mail Id"/>
                         <SubcribeBtn>SUBSCRIBE</SubcribeBtn>
                         </SubcribeContainer>
                     </FooterComponent>

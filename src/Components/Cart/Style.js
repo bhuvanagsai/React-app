@@ -63,12 +63,12 @@ export const CartButton = styled.button`
     font-weight: 700;
     font-size: 13px;
     margin-bottom: ${props => props.Checkout ? "0px" : "10px"};
-    background-color : ${props => props.Checkout  ? "#8dc63f" : "#a0a0a0"};
+    background-color : ${props => props.Checkout  ? props.theme.primaryColor : "#a0a0a0"};
     font-family: open sans,helveticaneue,helvetica neue,Helvetica,Arial,sans-serif;
 
 `
 export const CartEmpty = styled.p`
-    color: #8dc63f;
+    color:${(props) => props.theme.primaryColor};
     font-size: 20px;
     font-weight: 500;
     text-align: center;

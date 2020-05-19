@@ -1,7 +1,6 @@
 import React, { Component } from "react";
-import { SliderNavBar, SliderContent } from '../BannerSlider/Styles';
-import Banner from '../Banner/Banner';
-// import RecipePage from "../../Components/RecipePage";
+import { SliderNavBar, SliderContent } from "../BannerSlider/Styles";
+import Banner from "../Banner/Banner";
 import { withRouter } from "react-router-dom";
 class BannerSlider extends Component {
   state = {
@@ -20,10 +19,10 @@ class BannerSlider extends Component {
         RecipeName: "Mexican Grilled Corn Recipe",
         servings: 4,
         prepTime: "30 mins",
-        cooking :"15 mins",
+        cooking: "15 mins",
         Rating: 5,
         preparedBy: "BY SANDRA FORTIN",
-        calories:"632 Kcal",
+        calories: "632 Kcal",
         ingredients: [
           "2 pounds cubed beef stew meat",
           "3 tablespoons vegetable oil",
@@ -49,10 +48,10 @@ class BannerSlider extends Component {
         RecipeName: "Roast Chicken With Lemon Gravy",
         servings: 4,
         prepTime: " 30 mins",
-        cooking:"1 Hr",
+        cooking: "1 Hr",
         Rating: 3,
         preparedBy: "BY SANDRA FORTIN",
-        calories:"632 Kcal",
+        calories: "632 Kcal",
         ingredients: [
           "2 pounds cubed beef stew meat",
           "3 tablespoons vegetable oil",
@@ -79,7 +78,7 @@ class BannerSlider extends Component {
         servings: 2,
         prepTime: "15 mins",
         Rating: 5,
-        cooking:"15 mins",
+        cooking: "15 mins",
         preparedBy: "BY SANDRA FORTIN",
         calories: "632 Kcal",
         ingredients: [
@@ -99,7 +98,6 @@ class BannerSlider extends Component {
           "Return meat to the pot with any juices in the bowl and add the tomatoes with juice, chiles, beer, beef broth, oregano, cumin, and Worcestershire sauce. Season with salt and pepper to taste.",
           "Bring to a boil and reduce heat. Simmer, partially covered, for 2 1/2 hours or until meat is tender.",
         ],
-
       },
       {
         id: 3,
@@ -111,7 +109,7 @@ class BannerSlider extends Component {
         cooking: "2 Hr",
         Rating: 5,
         preparedBy: "BY SANDRA FORTIN",
-        calories:"632 Kcal",
+        calories: "632 Kcal",
         ingredients: [
           "2 pounds cubed beef stew meat",
           "3 tablespoons vegetable oil",
@@ -139,15 +137,18 @@ class BannerSlider extends Component {
   ViewbuttonHandler = (content) => {
     this.props.history.push({
       pathname: "Recipes",
-      state :{
-        RecipeData :content
-      } ,
+      state: {
+        RecipeData: content,
+      },
     });
- }
+  };
   render() {
     return (
       <div>
-        <Banner content={this.state.slider_contents[this.state.activeBanner]} buttonHandler = {this.ViewbuttonHandler} />
+        <Banner
+          content={this.state.slider_contents[this.state.activeBanner]}
+          buttonHandler={this.ViewbuttonHandler}
+        />
         <div className="wrapper">
           {this.state.Recipe.map((p, index) => (
             <SliderNavBar

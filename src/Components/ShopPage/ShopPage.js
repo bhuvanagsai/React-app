@@ -17,7 +17,7 @@ class Shop extends Component {
       this.setState({cartValue : Cart})
       this.setState({cartData : data});
     }
-    axios.get("http://demo3703858.mockable.io/ProductData").then((response) => {
+    axios.get("https://demo3703858.mockable.io/ProductData").then((response) => {
       this.setState({ post: response.data });
     });
   }

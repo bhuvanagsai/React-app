@@ -1,13 +1,13 @@
 import React, { Component } from "react";
-import {AuthorImageContainer,AuthorContact,AuthorDetails,AuthorInfo} from '../AuthorCard/Styles';
+import {AuthorImageContainer,AuthorContact,AuthorDetails,AuthorInfo,AuthorName} from '../AuthorCard/Styles';
 
 class Author extends Component {
   render() {
     return (
       <AuthorContact>
           <AuthorDetails>
-              <AuthorInfo color = "#8dc63f" fontWeight = "600" fontSize = "13px">AUTHOR</AuthorInfo>
-              <AuthorInfo color = "#606060" fontWeight = "700" fontSize = "20px">Sandra Fortin</AuthorInfo>
+              <AuthorInfo>AUTHOR</AuthorInfo>
+              <AuthorName>Sandra Fortin</AuthorName>
           </AuthorDetails>
           <AuthorImageContainer src = {require('../../assets/author-photo.jpg')} alt = "author image" />
           <a href= "Author_image">sandra@chow.com</a>
