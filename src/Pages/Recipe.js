@@ -11,7 +11,7 @@ export default function Recipe(props){
                 pathname: "Home",
               });
         }
-      }, []);
+      });
 
     return recipedata ?(
         <div>

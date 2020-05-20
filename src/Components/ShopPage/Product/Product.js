@@ -28,11 +28,11 @@ const Product = (props) => {
             >
               <img
                 src={require("../../../assets/shop_item_02.jpg")}
-                style={{ width: "100%" }}
+                style={{ width: "100%" }} alt = "Shop Item"
               ></img>
             </div>
             <ProductCart
-              hover={p.id == props.hover}
+              hover={Number(p.id) === Number(props.hover)}
               onClick={(event) =>{props.cartHandler(p,event)}}
             >
               <CartIcon

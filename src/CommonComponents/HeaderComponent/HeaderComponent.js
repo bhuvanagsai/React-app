@@ -31,7 +31,7 @@ const HeaderComponent = (props) => {
                   style={{ color: "#c4c4c4", marginLeft: "5px" }}
                 ></i>
               </NavBar>
-              <Dropdown hover={p.id == props.hoverStatus}>
+              <Dropdown hover={Number(p.id) === Number(props.hoverStatus)}>
                 {p.subLinks.map((p,index) => {
                   return (
                     <li key = {index+1}>

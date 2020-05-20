@@ -1,23 +1,30 @@
 import React, { Component } from "react";
 import Cart from "../Cart/Cart";
 import Product from "../ShopPage/Product/Product";
-import axios from "axios";
 import { withRouter } from "react-router-dom";
+import './loader.css';
+import axios from '../../axios/Axios';
 class Shop extends Component {
   state = {
     post: [],
     hover: 0,
     cartData : [],
-    cartValue: 1
+    cartValue: 1,
+    loading : false
   };
   componentWillMount() {
+    if(this.props.post !== 0){
+      setTimeout ( () => this.setState({loading: true})
+    ,5000);
+    }
+    
     if(this.props.history.location.state !== undefined){
       const data = this.props.history.location.state.content;
       const Cart = this.props.history.location.state.cartValue;
       this.setState({cartValue : Cart})
       this.setState({cartData : data});
     }
-    axios.get("https://demo3703858.mockable.io/ProductData").then((response) => {
+    axios.get("/ProductData").then((response) => {
       this.setState({ post: response.data });
     });
   }
@@ -42,14 +49,15 @@ ProductDetailsHandler = (content) => {
     return (
       <div className="wrapper wrapper-margin">
         <Cart cart = {this.state.cartData.length !== 0 || this.state.cartData.length !== undefined ? this.state.cartData : null} cartValue = {this.state.cartValue}/>
-        <Product
-          hover={this.state.hover}
-          cartHandler={this.CartDataHandler}
-          post={this.state.post}
-          ImageHoverHandler={this.MouseEnterHandler}
-          ImageLeaveHandler={this.MouseLeaveHandler}
-          ProductHandler = {this.ProductDetailsHandler}
-        />
+        {this.state.loading === false ?  <div className="lds-facebook"><div></div><div></div><div></div></div> :
+          <Product 
+            hover={this.state.hover}
+            cartHandler={this.CartDataHandler}
+            post={this.state.post}
+            ImageHoverHandler={this.MouseEnterHandler}
+            ImageLeaveHandler={this.MouseLeaveHandler}
+            ProductHandler = {this.ProductDetailsHandler}
+          />}
       </div>
     );
   }

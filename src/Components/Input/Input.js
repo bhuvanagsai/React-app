@@ -6,7 +6,6 @@ const input = (props) =>{
             <label>{props.label}</label>
             <div style = {{position : "relative"}}>
                 <Input {...props.elementConfig} value = {props.value} onChange ={props.changed}/>
-                {/* {props.label === 'Password' ? <EyeIcon onClick = {props.togglePassword} className="fa fa-eye" aria-hidden="true"></EyeIcon> : ''} */}
             </div>
             <ErrorMessage errMsgStatus=  {props.ErrorMessage}>Please Enter the Valid {props.label}</ErrorMessage>
         </InputComponent>

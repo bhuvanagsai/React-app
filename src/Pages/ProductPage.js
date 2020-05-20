@@ -11,7 +11,7 @@ const Product = (props) =>{
                 pathname: "Home",
               });
         }
-      }, []);
+      });
         return productdata ?(
             <div>
                 <Header/>

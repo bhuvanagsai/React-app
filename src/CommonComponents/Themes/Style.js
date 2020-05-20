@@ -49,7 +49,8 @@ export const ThemeColor = styled.div`
     padding:6.5px;
     background-color : ${(props) => props.Color};
     margin: 5px 5px 0px 0px;
-    border: ${(props) =>(props.active ? "2px solid #fff" : "2px solid transparent")}
+    border: ${(props) =>(props.active ? "2px solid #fff" : "2px solid transparent")};
+    cursor : pointer;
 `
 export const ResetButton = styled.button`
     padding: 10px;
@@ -62,4 +63,5 @@ export const ResetButton = styled.button`
     text-transform:uppercase;
     font-family:inherit;
     outline:none;
+    cursor:pointer;
 `

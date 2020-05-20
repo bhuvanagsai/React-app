@@ -16,10 +16,15 @@ const theme = {
         const themes = { ...theme, primaryColor :color };
         setcolor(themes);
     }
+    const resetHandler = () =>{
+        console.log('hekk');
+        const themes = {...theme ,primaryColor : '#8dc63f'};
+        setcolor(themes);
+    }
         return(
             <ThemeProvider theme = {color}>
                 {children}
-                <Themes themeColorSetting = {colorHandler} activeState = {activeState}></Themes>
+                <Themes themeColorSetting = {colorHandler} activeState = {activeState} reset = {resetHandler}></Themes>
             </ThemeProvider>
         );
 }   

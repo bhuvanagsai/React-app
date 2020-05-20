@@ -85,6 +85,7 @@ const Themes = (props) => {
     }
   };
   return (
+    
     <ThemingContainer toggleSetting={toggle}>
       <SettingIcon onClick={toggleHandler}>
         <h2>Style Switcher</h2>
@@ -104,7 +105,7 @@ const Themes = (props) => {
             ></ThemeColor>
           ))}
         </ColorsContainer>
-        <ResetButton>Reset</ResetButton>
+        <ResetButton onClick = {() => props.reset()}>Reset</ResetButton>
       </Theming>
     </ThemingContainer>
   );
