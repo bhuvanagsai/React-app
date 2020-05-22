@@ -17,26 +17,26 @@ const RecipeCard = (props) => {
         <RecipeNotFound>Recipe not found</RecipeNotFound>
       ) : (
         <RecipeCardsContainer>
-          {props.cardDetails.map((p) => (
-            <RecipeCards key={p.id} view={props.viewStatus}>
+          {props.cardDetails.map((p,index) => (
+            <RecipeCards key={index} view={props.viewStatus}>
               <ImageContainer
-                src={p.RecipeImage}
+                src={require(`./${process.env.PUBLIC_URL}/../../../assets/${p.RecipeImage}.jpg`)}
                 alt="Recipe image"
                 onMouseEnter={() => {
-                  props.HoverImageIn(p.id);
+                  props.HoverImageIn(index);
                 }}
                 onMouseOut={() => {
-                  props.HoverImageOut(p.id);
+                  props.HoverImageOut(index);
                 }}
                 view={props.viewStatus}
               />
               <ImageOverlay
                 view={props.viewStatus}
-                hover={Number(p.id) === Number(props.hover)}
+                hover={Number(index) === Number(props.hover)}
               />
               <ViewButton
                 view={props.viewStatus}
-                hover={Number(p.id) === Number(props.hover)}
+                hover={Number(index) === Number(props.hover)}
                 onClick={() => props.buttonHandler(p)}
               >
                 View recipe

@@ -20,10 +20,10 @@ const DirectionsContainer = styled.div`
 export default function Directions(props){
     return (
         <ul style = {{padding:0}}>
-            {props.directions.directions.map((p,index)=>(
+            {props.directions.map((p,index)=>(
                 <DirectionsContainer key = {index}>
                     <div >{index+1}</div>
-                    <DirectionSteps>{p}</DirectionSteps>
+                    <DirectionSteps>{p.value}</DirectionSteps>
                 </DirectionsContainer>
                 
             ))}

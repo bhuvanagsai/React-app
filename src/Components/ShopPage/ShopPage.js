@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Cart from "../Cart/Cart";
 import Product from "../ShopPage/Product/Product";
 import { withRouter } from "react-router-dom";
-import './loader.css';
+import Loader from '../../CommonComponents/Loader/Loader';
 import axios from '../../axios/Axios';
 class Shop extends Component {
   state = {
@@ -49,7 +49,7 @@ ProductDetailsHandler = (content) => {
     return (
       <div className="wrapper wrapper-margin">
         <Cart cart = {this.state.cartData.length !== 0 || this.state.cartData.length !== undefined ? this.state.cartData : null} cartValue = {this.state.cartValue}/>
-        {this.state.loading === false ?  <div className="lds-facebook"><div></div><div></div><div></div></div> :
+        {this.state.loading === false ?  <Loader/> :
           <Product 
             hover={this.state.hover}
             cartHandler={this.CartDataHandler}

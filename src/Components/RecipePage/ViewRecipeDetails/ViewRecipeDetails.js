@@ -26,7 +26,7 @@ const ViewRecipeDetails = (props) =>{
             <li>
                 <span>Serves: </span>
                 <br/>
-                <div>{props.viewRecipe.servings} people</div>
+                <div>{props.viewRecipe.servings}</div>
             </li>
             <li>
                 <span>Prep Time: </span>

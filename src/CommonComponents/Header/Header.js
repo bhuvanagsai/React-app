@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import HeaderComponent from '../HeaderComponent/HeaderComponent';
 import styled from 'styled-components';
+import {connect} from 'react-redux';
 
 const LogoWrapper = styled.div`
   width: 20%;
@@ -25,7 +26,8 @@ class Header extends Component {
         map : "Shop" 
       },
 
-      { id: "3", nav: "Submit Recipe", subLink: 0 ,map : "Submit Recipe" },
+      { id: "3", nav: "Submit Recipe", subLink: 0 ,map : "SubmitRecipe" },
+      { id: "4", nav: "Log Out", subLink: 0 ,map : "" },
     ],
     hoverIn: 0,
   };
@@ -35,7 +37,10 @@ class Header extends Component {
   DropdownHoverOut = () => {
     this.setState({ hoverIn: -1 });
   };  
-  
+  logOutHandler = () =>{
+    sessionStorage.setItem("auth",false);
+    this.props.LogOut();
+  }
   render() {
     return (
       <header className="wrapper">
@@ -47,11 +52,16 @@ class Header extends Component {
           hoverStatus={this.state.hoverIn}
           DropdownHoverEnter={this.DropdownHoverIn}
           DropdownHoverLeave={this.DropdownHoverOut}
+          logOutHandlers=  {this.logOutHandler}
         />
       </header>
       
     );
   }
 }
-
-export default Header;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    LogOut: () => dispatch({ type: "LOGIN" }),
+  }
+}
+export default connect(null,mapDispatchToProps)(Header);

@@ -14,6 +14,7 @@ class SignUp extends Component {
     signUpForm: {
       Fullname: {
         label: "FullName",
+        elementType : "input",
         elementConfig: {
           type: "text",
           placeholder: "Enter the Fullname",
@@ -23,6 +24,7 @@ class SignUp extends Component {
       },
       Email: {
         label: "Email",
+        elementType : "input",
         elementConfig: {
           type: "text",
           placeholder: "Enter the email",
@@ -32,6 +34,7 @@ class SignUp extends Component {
       },
       UserName: {
         label: "UserName",
+        elementType : "input",
         elementConfig: {
           type: "text",
           placeholder: "Enter the Username",
@@ -41,6 +44,7 @@ class SignUp extends Component {
       },
       Password: {
         label: "Password",
+        elementType : "input",
         elementConfig: {
           type: "text",
           placeholder: "**********",
@@ -50,6 +54,7 @@ class SignUp extends Component {
       },
       RepeatPassword: {
         label: "Repeat Password",
+        elementType : "input",
         elementConfig: {
           type: "text",
           placeholder: "**********",
@@ -76,7 +81,6 @@ class SignUp extends Component {
     let users = JSON.parse(localStorage.getItem("users") || "[]");
     let obj = users.find(obj => obj.UserName === this.state.signUpForm.UserName.value);
     if(!obj &&(formData.Fullname !== '' && formData.UserName !== '' && formData.Password !== '' && formData.Email !== '' && formData.RepeatPassword !== '')){
-      console.log("rtyui")
       users.push(formData);
       this.signUpValidation();
       localStorage.setItem("users", JSON.stringify(users));
@@ -149,6 +153,7 @@ class SignUp extends Component {
               <Input
                 key={p.id}
                 label={p.config.label}
+                elementType = {p.config.elementType}
                 elementConfig={p.config.elementConfig}
                 value={p.config.value}
                 changed = { (event) => this.inputChangedHandler(event ,p.id)}

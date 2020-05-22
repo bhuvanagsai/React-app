@@ -13,7 +13,7 @@ const HeaderComponent = (props) => {
         if (p.subLink === 0) {
           return (
             <NavBar key = {p.id}>
-              <NavigationLink href={p.map}>{p.nav}</NavigationLink>
+              <NavigationLink onClick={(p.nav === "Log Out") ? props.logOutHandlers : null} href={p.map}>{p.nav}</NavigationLink>
             </NavBar>
           );
         } else {

@@ -35,10 +35,10 @@ class BannerSlider extends Component {
           "4 stalks celery, cut into 1 inch pieces",
         ],
         directions: [
-          "In a Dutch oven, heat oil over medium heat until hot, but not smoking. Pat the meat dry with paper towels and brown in batches, transferring the meat with a slotted spoon to a bowl as they are done.",
-          "In the fat remaining in the pot, cook the onions until softened, about 5 minutes.",
-          "Return meat to the pot with any juices in the bowl and add the tomatoes with juice, chiles, beer, beef broth, oregano, cumin, and Worcestershire sauce. Season with salt and pepper to taste.",
-          "Bring to a boil and reduce heat. Simmer, partially covered, for 2 1/2 hours or until meat is tender.",
+          {value :"In a Dutch oven, heat oil over medium heat until hot, but not smoking. Pat the meat dry with paper towels and brown in batches, transferring the meat with a slotted spoon to a bowl as they are done."},
+          {value :"In the fat remaining in the pot, cook the onions until softened, about 5 minutes."},
+          {value :"Return meat to the pot with any juices in the bowl and add the tomatoes with juice, chiles, beer, beef broth, oregano, cumin, and Worcestershire sauce. Season with salt and pepper to taste."},
+          {value :"Bring to a boil and reduce heat. Simmer, partially covered, for 2 1/2 hours or until meat is tender."}
         ],
       },
       {
@@ -64,10 +64,10 @@ class BannerSlider extends Component {
           "4 stalks celery, cut into 1 inch pieces",
         ],
         directions: [
-          "In a Dutch oven, heat oil over medium heat until hot, but not smoking. Pat the meat dry with paper towels and brown in batches, transferring the meat with a slotted spoon to a bowl as they are done.",
-          "In the fat remaining in the pot, cook the onions until softened, about 5 minutes.",
-          "Return meat to the pot with any juices in the bowl and add the tomatoes with juice, chiles, beer, beef broth, oregano, cumin, and Worcestershire sauce. Season with salt and pepper to taste.",
-          "Bring to a boil and reduce heat. Simmer, partially covered, for 2 1/2 hours or until meat is tender.",
+          {value :"In a Dutch oven, heat oil over medium heat until hot, but not smoking. Pat the meat dry with paper towels and brown in batches, transferring the meat with a slotted spoon to a bowl as they are done."},
+          {value :"In the fat remaining in the pot, cook the onions until softened, about 5 minutes."},
+          {value :"Return meat to the pot with any juices in the bowl and add the tomatoes with juice, chiles, beer, beef broth, oregano, cumin, and Worcestershire sauce. Season with salt and pepper to taste."},
+          {value :"Bring to a boil and reduce heat. Simmer, partially covered, for 2 1/2 hours or until meat is tender."}
         ],
       },
       {
@@ -93,10 +93,10 @@ class BannerSlider extends Component {
           "4 stalks celery, cut into 1 inch pieces",
         ],
         directions: [
-          "In a Dutch oven, heat oil over medium heat until hot, but not smoking. Pat the meat dry with paper towels and brown in batches, transferring the meat with a slotted spoon to a bowl as they are done.",
-          "In the fat remaining in the pot, cook the onions until softened, about 5 minutes.",
-          "Return meat to the pot with any juices in the bowl and add the tomatoes with juice, chiles, beer, beef broth, oregano, cumin, and Worcestershire sauce. Season with salt and pepper to taste.",
-          "Bring to a boil and reduce heat. Simmer, partially covered, for 2 1/2 hours or until meat is tender.",
+          {value :"In a Dutch oven, heat oil over medium heat until hot, but not smoking. Pat the meat dry with paper towels and brown in batches, transferring the meat with a slotted spoon to a bowl as they are done."},
+          {value :"In the fat remaining in the pot, cook the onions until softened, about 5 minutes."},
+          {value :"Return meat to the pot with any juices in the bowl and add the tomatoes with juice, chiles, beer, beef broth, oregano, cumin, and Worcestershire sauce. Season with salt and pepper to taste."},
+          {value :"Bring to a boil and reduce heat. Simmer, partially covered, for 2 1/2 hours or until meat is tender."}
         ],
       },
       {
@@ -122,10 +122,10 @@ class BannerSlider extends Component {
           "4 stalks celery, cut into 1 inch pieces",
         ],
         directions: [
-          "In a Dutch oven, heat oil over medium heat until hot, but not smoking. Pat the meat dry with paper towels and brown in batches, transferring the meat with a slotted spoon to a bowl as they are done.",
-          "In the fat remaining in the pot, cook the onions until softened, about 5 minutes.",
-          "Return meat to the pot with any juices in the bowl and add the tomatoes with juice, chiles, beer, beef broth, oregano, cumin, and Worcestershire sauce. Season with salt and pepper to taste.",
-          "Bring to a boil and reduce heat. Simmer, partially covered, for 2 1/2 hours or until meat is tender.",
+          {value :"In a Dutch oven, heat oil over medium heat until hot, but not smoking. Pat the meat dry with paper towels and brown in batches, transferring the meat with a slotted spoon to a bowl as they are done."},
+          {value :"In the fat remaining in the pot, cook the onions until softened, about 5 minutes."},
+          {value :"Return meat to the pot with any juices in the bowl and add the tomatoes with juice, chiles, beer, beef broth, oregano, cumin, and Worcestershire sauce. Season with salt and pepper to taste."},
+          {value :"Bring to a boil and reduce heat. Simmer, partially covered, for 2 1/2 hours or until meat is tender."}
         ],
       },
     ],

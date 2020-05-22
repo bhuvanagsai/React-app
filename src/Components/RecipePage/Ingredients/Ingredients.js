@@ -42,7 +42,7 @@ export default function Ingredients(props){
     return(
     
         <IngredientsContainer>
-            {props.ingredients.ingredients.map((p,index) =>(
+            {props.ingredients.map((p,index) =>(
                 <IngredientsAdded key = {index}>
                     <label className="container">{p}
                         <input type="checkbox"/>

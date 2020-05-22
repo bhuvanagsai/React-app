@@ -1,4 +1,4 @@
-import React  from 'react';
+import React , {useState} from 'react';
 import Search from '../../CommonComponents/Search/Search';
 import {RecipeBannerContainer} from '../Styles';
 import {TitleAlignment ,RecipeHeading,RatingsContainer,RecipeImageContainer,RecipeDetails,PrintButton,RecipeDescription} from './Styles';
@@ -14,7 +14,14 @@ const HeaderContainer = styled.h3`
     line-height: 34px;
     font-family: open sans,helveticaneue,helvetica neue,Helvetica,Arial,sans-serif;
 `
+
 const RecipePage = (props) =>{
+    const [searchText,setSearchText] = useState(" ");
+    const SearchTextHandler = (event) =>{
+    const { value } = event.target;
+    const lowercasedValue = value.toLowerCase();
+    setSearchText(lowercasedValue);
+  }
         return(
             <div className="wrapper wrapper-margin">
                 <div style = {{width: "75%"}}>
@@ -32,7 +39,7 @@ const RecipePage = (props) =>{
                                 <span> (4 reviews)</span>
                             </RatingsContainer>
                         </TitleAlignment>
-                        <RecipeImageContainer src = {require('../../assets/recipePhoto-01.webp')}></RecipeImageContainer>
+                        <RecipeImageContainer src = {require('../../assets/recipePhoto-01.webp')} alt  = "Recipe"></RecipeImageContainer>
                         <RecipeDetails>
                             <ViewRecipeDetails viewRecipe = {props.data}/>
                             <PrintButton>
@@ -44,14 +51,14 @@ const RecipePage = (props) =>{
                     <RecipeDescription>{props.data.Description}</RecipeDescription>
                     <div>
                         <HeaderContainer>Ingredients</HeaderContainer>
-                        <Ingredients ingredients = {props.data}/>
+                        <Ingredients ingredients = {props.data.ingredients}/>
                     </div>
                     <div>
                     <HeaderContainer>Directions</HeaderContainer>
-                    <Directions directions = {props.data}></Directions>
+                    <Directions directions = {props.data.directions}></Directions>
                 </div>
                 </div>
-                <Search/>
+                <Search SearchText = {SearchTextHandler} data = {searchText}/>
             </div>
         );
 }

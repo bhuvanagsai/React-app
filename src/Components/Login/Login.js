@@ -15,6 +15,7 @@ class Login extends Component {
     loginForm: {
       UserName: {
         label: "UserName",
+        elementType : "input",
         elementConfig: {
           type: "text",
           placeholder: "Enter the Username",
@@ -25,6 +26,7 @@ class Login extends Component {
       },
       Password: {
         label: "Password",
+        elementType : "input",
         elementConfig: {
           type: "text",
           placeholder: "Enter the password",
@@ -120,6 +122,7 @@ class Login extends Component {
             {UserDetailsArr.map((p) => (
               <Input
                 key={p.id}
+                elementType = {p.config.elementType}
                 label={p.config.label}
                 elementConfig={p.config.elementConfig}
                 value={p.config.value}

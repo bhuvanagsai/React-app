@@ -21,7 +21,7 @@ class App extends Component {
             <Switch> 
               <Route path="/SignUp" exact component = {SignUp}/>
               <Route path="/" exact component = {Login}/> 
-              <Route path = {["/Home", "/Recipes","/Shop", "/ProductPage"]} exact 
+              <Route path = {["/Home", "/Recipes","/Shop", "/ProductPage","/SubmitRecipe"]} exact 
               render={() =>
                 this.props.LoggedIn === 'true' ? (
                   <Routing/>
