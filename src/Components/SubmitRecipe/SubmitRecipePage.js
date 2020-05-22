@@ -195,7 +195,7 @@ class SubmitRecipe extends Component {
         directions: this.state.submitRecipeForm.Directions.value,
       };
       axios.post("/Recipe.json", RecipeData).then((response) => {
-        form.reset()
+
       })
   };
   inputChangedHandler = (event, InputIdentifier) => {
